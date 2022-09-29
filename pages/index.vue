@@ -72,7 +72,7 @@
               <img src="~/assets/imgs/android.svg" alt="iphone">
             </span>
                 <span>Починить Android</span>
-                <span>Высокое качестно за низкую цену!</span>
+                <span>Высокое качестно деталей!</span>
               </div>
               <div class="home__mini-store__info__card__btn">
                 <span>Перейти</span>
@@ -101,6 +101,11 @@
               <span><lfa icon="location-arrow"/></span>
               <span>Как добраться?</span>
               <span>Главный вход → направо → дверь под лестницей</span>
+            </div>
+            <div class="home__map__info__label__info-block home__map__info__label__info-block--high">
+              <span><lfa icon="phone"/></span>
+              <span>Телефон</span>
+              <span><p>+7-900-(000)-00-00</p> Все доступые варианты связи, доступны на странице <nuxt-link to="/contacts">Контакты</nuxt-link></span>
             </div>
           </div>
           <yandex-map :settings="settings" :coords="coords" :controls="control">
@@ -277,6 +282,7 @@ export default {
           overflow: hidden;
           border-radius: 0 10px 10px 0;
           background-color: #e2e2e2;
+          box-shadow: 3px 0 10px 0 #0b0b0b inset;
           transition: .3s;
           & span {
             display: flex;
@@ -320,27 +326,44 @@ export default {
           grid-template-areas: "A B"
                                "A C";
           column-gap: 15px;
+          row-gap: 3px;
           padding: 5px 10px;
           min-width: 200px;
           max-width: 250px;
           border: 1px solid #adacab;
           border-radius: 10px;
-          & span:first-child {
-            grid-area: A;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 26px;
-            width: 26px;
+          & span {
+            &:first-child {
+              grid-area: A;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 26px;
+              width: 26px;
+            }
+            &:nth-child(2) {
+              grid-area: B;
+              white-space: nowrap;
+            }
+            &:last-child {
+              grid-area: C;
+              font-size: 16px;
+              font-weight: 500;
+            }
           }
-          & span:nth-child(2) {
-            grid-area: B;
-            white-space: nowrap;
-          }
-          & span:last-child {
-            grid-area: C;
-            font-size: 16px;
-            font-weight: 500;
+          &--high {
+            & span {
+              &:last-child {
+                font-size: 12px;
+              }
+            }
+            & a, & p {
+              font-size: 16px;
+              color: #e2e2e2;
+              margin: 0;
+              padding: 0;
+              cursor: pointer;
+            }
           }
         }
       }
