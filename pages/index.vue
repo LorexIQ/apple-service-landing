@@ -20,6 +20,68 @@
         <div class="home__banner__img"/>
       </div>
     </div>
+    <div class="home__mini-store">
+      <div class="wrap">
+        <div class="home__mini-store__info">
+          <nuxt-link to="/assortment">
+            <div class="home__mini-store__info__card">
+              <div class="home__mini-store__info__card__block">
+              <span>
+              <img src="~/assets/imgs/iphonex.svg" alt="iphone">
+            </span>
+                <span>Продать iPhone</span>
+                <span>Самая выгодная цена в регионе!</span>
+              </div>
+              <div class="home__mini-store__info__card__btn">
+                <span>Перейти</span>
+              </div>
+            </div>
+          </nuxt-link>
+          <nuxt-link to="/assortment">
+            <div class="home__mini-store__info__card">
+              <div class="home__mini-store__info__card__block">
+              <span>
+              <img src="~/assets/imgs/iphonex.svg" alt="iphone">
+            </span>
+                <span>Купить iPhone</span>
+                <span>Самая низкая цена в регионе!</span>
+              </div>
+              <div class="home__mini-store__info__card__btn">
+                <span>Перейти</span>
+              </div>
+            </div>
+          </nuxt-link>
+          <nuxt-link to="/assortment">
+            <div class="home__mini-store__info__card">
+              <div class="home__mini-store__info__card__block">
+              <span>
+              <img src="~/assets/imgs/iphonex_repair.svg" alt="iphone">
+            </span>
+                <span>Починить iPhone</span>
+                <span>Высокое качестно за низкую цену!</span>
+              </div>
+              <div class="home__mini-store__info__card__btn">
+                <span>Перейти</span>
+              </div>
+            </div>
+          </nuxt-link>
+          <nuxt-link to="/assortment">
+            <div class="home__mini-store__info__card">
+              <div class="home__mini-store__info__card__block">
+              <span>
+              <img src="~/assets/imgs/android.svg" alt="iphone">
+            </span>
+                <span>Починить Android</span>
+                <span>Высокое качестно за низкую цену!</span>
+              </div>
+              <div class="home__mini-store__info__card__btn">
+                <span>Перейти</span>
+              </div>
+            </div>
+          </nuxt-link>
+        </div>
+      </div>
+    </div>
     <div class="home__map">
       <div class="wrap">
         <h2>Мы на карте</h2>
@@ -82,6 +144,7 @@ export default {
     }
   },
   mounted() {
+
   }
 }
 </script>
@@ -159,8 +222,92 @@ export default {
       background: linear-gradient(90deg, rgb(9, 9, 9) 0, rgba(240,240,240,0) 60%), 0 0/826px 509px url('assets/imgs/mainPhone.png') no-repeat;
     }
   }
+  &__mini-store {
+    padding: 50px 0;
+    background-color: #0b0b0b;
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 0;
+      justify-content: space-around;
+      &__card {
+        position: relative;
+        width: 440px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #e2e2e2;
+        user-select: none;
+        cursor: pointer;
+        white-space: nowrap;
+        &__block {
+          display: grid;
+          grid-template-areas: "A B"
+                             "A C";
+          row-gap: 5px;
+          column-gap: 20px;
+          padding: 15px 20px 15px 20px;
+          & span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:first-child {
+              grid-area: A;
+              display: flex;
+              align-items: center;
+              width: 30px;
+            }
+            &:nth-child(2) {
+              grid-area: B;
+              color: #e2e2e2;
+              font-size: 36px;
+              align-self: flex-end;
+            }
+            &:last-child {
+              grid-area: C;
+              align-self: flex-start;
+            }
+          }
+        }
+        &__btn {
+          position: absolute;
+          height: 100%;
+          width: 0;
+          top: 0;
+          right: 0;
+          overflow: hidden;
+          border-radius: 0 10px 10px 0;
+          background-color: #e2e2e2;
+          transition: .3s;
+          & span {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            height: 100%;
+            color: #0f0f0f;
+          }
+        }
+        &:hover {
+          .home {
+            &__mini-store {
+              &__info {
+                &__card {
+                  &__btn {
+                    width: 100px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   &__map {
-    margin-bottom: 50px;
+    padding-bottom: 40px;
+    & h2 {
+      margin: 0;
+      padding: 40px 0 20px;
+    }
     &__info {
       display: flex;
       gap: 20px;
@@ -209,7 +356,7 @@ export default {
     display: flex;
     align-items: center;
     height: 70px;
-    background-color: #090909;
+    background-color: #000;
     &__info {
       display: flex;
       align-items: center;
