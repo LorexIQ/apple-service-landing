@@ -40,9 +40,16 @@ html, body {
   font-size: 20px;
   font-weight: 600;
   color: #adacab;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #0f0f0f;
+}
+.default {
+  height: inherit;
+}
+#__layout, #__nuxt {
+  height: inherit;
 }
 
 a {

@@ -118,14 +118,7 @@
         </div>
       </div>
     </div>
-    <div class="home__footer">
-      <div class="wrap">
-        <div class="home__footer__info">
-          <img src="~/static/logo/Apple.svg" width="20" height="20" alt="apple">
-          <p>© 2014-{{ new Date().getFullYear() }} AppleService</p>
-        </div>
-      </div>
-    </div>
+    <l-footer />
   </div>
 </template>
 
@@ -373,24 +366,6 @@ export default {
       width: 100%;
       border-radius: 10px;
       overflow: hidden;
-    }
-  }
-  &__footer {
-    display: flex;
-    align-items: center;
-    height: 70px;
-    background-color: #000;
-    &__info {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      & p {
-        font-size: 16px;
-        margin: 0;
-      }
-      & * {
-        color: #adacab;
-      }
     }
   }
 }
