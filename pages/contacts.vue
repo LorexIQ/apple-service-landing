@@ -142,8 +142,8 @@ export default {
       return time.getHours() + time.getMinutes() / 60
     },
     getLastTime() {
-      return `${`${Math.round(this.today.hourEnd - this.timeNow)}`.padStart(2, '0')}:
-      ${`${60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60)}`.padStart(2, '0')}`
+      return `${`${Math.floor(this.today.hourEnd - this.timeNow)}`.padStart(2, '0')}:
+      ${`${60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60) === 60 ? 59 : 60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60)}`.padStart(2, '0')}`
     }
   }
 }
@@ -152,13 +152,13 @@ export default {
 <style lang="scss" scoped>
 .contacts {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   &__info {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 0 90px;
     &__cards {
       display: grid;
       grid-template-areas: "A A"
