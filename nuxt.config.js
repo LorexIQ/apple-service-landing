@@ -19,6 +19,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/logo/Apple.svg' }
+    ],
+    script: [
+      {
+        src: 'https://unpkg.com/fast-average-color/dist/index.browser.min.js'
+      }
     ]
   },
 

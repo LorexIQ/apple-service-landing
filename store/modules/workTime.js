@@ -36,7 +36,7 @@ export default {
           day: 'Суббота',
           abbr: 'Сб',
           hourStart: 10,
-          hourEnd: 19
+          hourEnd: 17
         },
         {
           day: 'Воскресенье',

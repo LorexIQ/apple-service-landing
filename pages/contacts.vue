@@ -95,7 +95,7 @@ export default {
           title: 'Avito',
           description: 'Сергей',
           link: 'https://www.avito.ru/user/cbd51e5f936d89ba6363cf2de974c006/profile?id=2494107392',
-          iconSvg: 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iX9Ch0LvQvtC5XzEiIGRhdGEtbmFtZT0i0KHQu9C+0LkgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODMuMSA4My4xIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjOTdjZjI2OwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmZjYxNjM7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogIzBhZjsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmaWxsOiAjYTE2OWY3OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjYwLjY1IiBjeT0iNjAuNjUiIHI9IjIyLjQ1Ii8+CiAgPGNpcmNsZSBjbGFzcz0iY2xzLTQiIGN4PSIxOC40NSIgY3k9IjYwLjY1IiByPSIxMC40NSIvPgogIDxjaXJjbGUgY2xhc3M9ImNscy0yIiBjeD0iNjAuNjUiIGN5PSIxOC40NSIgcj0iMTQuNDUiLz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMyIgY3g9IjE4LjQ1IiBjeT0iMTguNDUiIHI9IjE4LjQ1Ii8+Cjwvc3ZnPg=='
+          iconSvg: 'about:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iX9Ch0LvQvtC5XzEiIGRhdGEtbmFtZT0i0KHQu9C+0LkgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODMuMSA4My4xIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjOTdjZjI2OwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmZjYxNjM7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogIzBhZjsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmaWxsOiAjYTE2OWY3OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjYwLjY1IiBjeT0iNjAuNjUiIHI9IjIyLjQ1Ii8+CiAgPGNpcmNsZSBjbGFzcz0iY2xzLTQiIGN4PSIxOC40NSIgY3k9IjYwLjY1IiByPSIxMC40NSIvPgogIDxjaXJjbGUgY2xhc3M9ImNscy0yIiBjeD0iNjAuNjUiIGN5PSIxOC40NSIgcj0iMTQuNDUiLz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMyIgY3g9IjE4LjQ1IiBjeT0iMTguNDUiIHI9IjE4LjQ1Ii8+Cjwvc3ZnPg=='
         }
       ],
       today: this.GET_DAY(),
@@ -132,7 +132,7 @@ export default {
     },
     getLastTime() {
       return `${`${Math.round(this.today.hourEnd - this.timeNow)}`.padStart(2, '0')}:
-      ${`${60 - Math.round((this.timeNow - Math.round(this.timeNow)) * 60)}`.padStart(2, '0')}`
+      ${`${60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60)}`.padStart(2, '0')}`
     }
   }
 }
