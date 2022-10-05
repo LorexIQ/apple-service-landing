@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="wrap">
       <div class="footer__info">
-        <img src="~/static/logo/Apple.svg" width="20" height="20" alt="apple">
+        <img src="~/static/icons/Apple.svg" width="20" height="20" alt="apple">
         <p>© 2014-{{ new Date().getFullYear() }} AppleService</p>
       </div>
     </div>

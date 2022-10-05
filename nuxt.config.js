@@ -18,7 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logo/Apple.svg' }
+      { rel: 'icon', type: 'image/x-icon', href: '/icons/Apple.svg' }
     ],
     script: [
       {

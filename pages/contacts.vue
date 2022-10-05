@@ -35,7 +35,10 @@
             target="_blank"
             draggable="false"
           >
-            <div class="contacts__info__cards__card">
+            <div
+              class="contacts__info__cards__card"
+              :class="contact.style ? `contacts__info__cards__card${contact.style}` : ''"
+            >
               <span :style="contact.color ? `color: ${contact.color};` : ''">
                 <img v-if="contact.iconSvg" :src="contact.iconSvg" alt="icon">
                 <lfa v-else :icon="contact.icon"/>
@@ -60,6 +63,14 @@ export default {
     return {
       action: 0,
       contacts: [
+        {
+          title: 'WhatsApp',
+          description: 'Сергей',
+          link: 'https://api.whatsapp.com/send/?phone=79803073882&text&type=phone_number&app_absent=0',
+          icon: ['fab', 'whatsapp'],
+          color: '#0dc143',
+          style: '--green'
+        },
         {
           title: '+7 (980) 307-38-82',
           link: 'tel:79803073882',
@@ -95,7 +106,7 @@ export default {
           title: 'Avito',
           description: 'Сергей',
           link: 'https://www.avito.ru/user/cbd51e5f936d89ba6363cf2de974c006/profile?id=2494107392',
-          iconSvg: 'about:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iX9Ch0LvQvtC5XzEiIGRhdGEtbmFtZT0i0KHQu9C+0LkgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODMuMSA4My4xIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjOTdjZjI2OwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmZjYxNjM7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogIzBhZjsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmaWxsOiAjYTE2OWY3OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMSIgY3g9IjYwLjY1IiBjeT0iNjAuNjUiIHI9IjIyLjQ1Ii8+CiAgPGNpcmNsZSBjbGFzcz0iY2xzLTQiIGN4PSIxOC40NSIgY3k9IjYwLjY1IiByPSIxMC40NSIvPgogIDxjaXJjbGUgY2xhc3M9ImNscy0yIiBjeD0iNjAuNjUiIGN5PSIxOC40NSIgcj0iMTQuNDUiLz4KICA8Y2lyY2xlIGNsYXNzPSJjbHMtMyIgY3g9IjE4LjQ1IiBjeT0iMTguNDUiIHI9IjE4LjQ1Ii8+Cjwvc3ZnPg=='
+          iconSvg: '/icons/avito.svg'
         }
       ],
       today: this.GET_DAY(),
@@ -150,13 +161,37 @@ export default {
     padding: 20px 0;
     &__cards {
       display: grid;
-      grid-template-areas: "A B"
-                           "C D"
-                           "E F";
+      grid-template-areas: "A A"
+                           "B C"
+                           "D E"
+                           "F G";
       grid-auto-columns: 30% 30%;
       gap: 15px 15px;
       justify-content: center;
       width: 100%;
+      & a {
+        &:first-child {
+          grid-area: A;
+        }
+        &:nth-child(2) {
+          grid-area: B;
+        }
+        &:nth-child(3) {
+          grid-area: C;
+        }
+        &:nth-child(4) {
+          grid-area: D;
+        }
+        &:nth-child(5) {
+          grid-area: E;
+        }
+        &:nth-child(6) {
+          grid-area: F;
+        }
+        &:last-child {
+          grid-area: G;
+        }
+      }
       &__card {
         display: grid;
         grid-template-areas: "A B"
@@ -192,26 +227,25 @@ export default {
             font-size: 16px;
           }
         }
-        &:first-child {
-          grid-area: A;
-        }
-        &:nth-child(2) {
-          grid-area: B;
-        }
-        &:nth-child(3) {
-          grid-area: C;
-        }
-        &:nth-child(4) {
-          grid-area: D;
-        }
-        &:nth-child(5) {
-          grid-area: E;
-        }
-        &:last-child {
-          grid-area: F;
-        }
         &:hover {
           background-color: #353535;
+        }
+        &--green {
+          background: linear-gradient(45deg, rgb(66, 200, 105) 0%, rgb(33, 147, 67) 100%);
+          & span {
+            &:first-child {
+              color: #fff !important;
+            }
+            &:nth-child(2) {
+              color: #fff !important;
+            }
+            &:last-child {
+              color: #2f2f2f !important;
+            }
+          }
+          &:hover {
+            transform: scale(1.02);
+          }
         }
       }
     }
