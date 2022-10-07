@@ -51,7 +51,7 @@
               </div>
             </div>
           </nuxt-link>
-          <nuxt-link to="/assortment">
+          <nuxt-link to="/services">
             <div class="home__mini-store__info__card">
               <div class="home__mini-store__info__card__block">
               <span>
@@ -65,7 +65,7 @@
               </div>
             </div>
           </nuxt-link>
-          <nuxt-link to="/assortment">
+          <nuxt-link to="/services">
             <div class="home__mini-store__info__card">
               <div class="home__mini-store__info__card__block">
               <span>

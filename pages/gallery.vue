@@ -92,7 +92,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$borderFullWatch: 20px;
+$borderFullWatch: 10px;
 
 .gallery {
   &__cards {
