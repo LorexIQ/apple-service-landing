@@ -92,8 +92,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$borderFullWatch: 10px;
-
 .gallery {
   &__cards {
     display: flex;
@@ -135,6 +133,7 @@ $borderFullWatch: 10px;
     }
   }
   &__full-watch {
+    $borderFullWatch: 10px;
     position: fixed;
     top: 80px;
     bottom: 0;

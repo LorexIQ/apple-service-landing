@@ -74,3 +74,72 @@ a {
   }
   &-leave, &-enter-to {}
 }
+
+.super-btn {
+  position: relative;
+  width: 440px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e2e2;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  &__block {
+    display: grid;
+    grid-template-areas: "A B"
+                             "A C";
+    row-gap: 5px;
+    column-gap: 20px;
+    padding: 15px 20px 15px 20px;
+    & span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:first-child {
+        grid-area: A;
+        display: flex;
+        align-items: center;
+        width: 30px;
+        font-size: 35px;
+        color: #e2e2e2;
+      }
+      &:nth-child(2) {
+        grid-area: B;
+        color: #e2e2e2;
+        font-size: 36px;
+        align-self: flex-end;
+      }
+      &:last-child {
+        grid-area: C;
+        align-self: flex-start;
+      }
+    }
+  }
+  &__btn {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    border-radius: 0 10px 10px 0;
+    background-color: #e2e2e2;
+    box-shadow: 3px 0 10px 0 #0b0b0b inset;
+    transition: .3s;
+    & span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+      height: 100%;
+      color: #0f0f0f;
+    }
+  }
+  &:hover {
+    .super-btn {
+      &__btn {
+        width: 100px;
+      }
+    }
+  }
+}
