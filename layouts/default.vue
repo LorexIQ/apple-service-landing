@@ -228,6 +228,26 @@ export default {
           }
         }
       }
+      @media (max-width: 420px) and (min-width: 100px) {
+        &__logo {
+          &__menu {
+            gap: 3px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            &--open {
+              & img {
+                &:first-child {
+                  transform: translateX(6px) rotate(45deg);
+                }
+                &:last-child {
+                  transform: translateX(-6px) rotate(-45deg);
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
   &__app {
