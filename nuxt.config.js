@@ -21,7 +21,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: `${this.$router.options.base}icons/Apple.svg` }
+      { rel: 'icon', type: 'image/x-icon', href: '/Apple.svg' }
     ],
     script: [
       {
@@ -60,6 +60,6 @@ export default {
 
   axios: {
     credentials: false,
-    proxyHeaders: false,
+    proxyHeaders: false
   }
 }
