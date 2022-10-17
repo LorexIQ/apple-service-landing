@@ -1,3 +1,5 @@
+const router = process.env.MODE !== 'dev' ? '/apple-service-landing/' : '/'
+console.log(`${router}icons/Apple.svg`)
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -5,7 +7,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: process.env.MODE !== 'dev' ? '/apple-service-landing/' : '/'
+    base: router
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -21,7 +23,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/Apple.svg' }
+      { rel: 'icon', type: 'image/x-icon', href: `${router}icons/Apple.svg` }
     ],
     script: [
       {
