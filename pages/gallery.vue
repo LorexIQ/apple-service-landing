@@ -131,4 +131,14 @@ export default {
     }
   }
 }
+@media (max-width: 405px) and (min-width: 100px) {
+  .gallery {
+    &__cards {
+      &__card {
+        width: 140px;
+        height: 187px;
+      }
+    }
+  }
+}
 </style>

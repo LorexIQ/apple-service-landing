@@ -203,6 +203,7 @@ export default {
         border-radius: 5px;
         box-sizing: border-box;
         cursor: pointer;
+        white-space: nowrap;
         transition: .3s;
         & span {
           display: flex;
@@ -252,7 +253,8 @@ export default {
     &__graphic {
       display: flex;
       flex-direction: column;
-      width: 75%;
+      max-width: 800px;
+      width: 100%;
       padding: 10px 20px;
       border: 1px solid #e2e2e2;
       border-radius: 5px;
@@ -296,6 +298,28 @@ export default {
   & .footer {
     position: absolute;
     bottom: 0;
+  }
+}
+@media (max-width: 900px) and (min-width: 300px) {
+  .contacts {
+    &__info {
+      &__cards {
+        grid-auto-columns: 50%;
+      }
+    }
+  }
+}
+@media (max-width: 550px) and (min-width: 100px) {
+  .contacts {
+    &__info {
+      &__graphic {
+        font-size: 16px;
+      }
+      &__cards {
+        grid-auto-columns: 100%;
+        grid-template-areas: "A" "B" "C" "D" "E" "F" "G";
+      }
+    }
   }
 }
 </style>

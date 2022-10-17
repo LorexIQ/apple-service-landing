@@ -171,7 +171,7 @@ export default {
       @media (min-width: 1100px) {
         justify-content: space-between;
       }
-      @media (max-width: 1099px) and (min-width: 300px) {
+      @media (max-width: 1099px) and (min-width: 100px) {
         &__navigation {
           position: absolute;
           bottom: 0;

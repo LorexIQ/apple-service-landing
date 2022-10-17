@@ -176,4 +176,20 @@ export default {
     }
   }
 }
+@media (max-width: 405px) and (min-width: 100px) {
+  .items {
+    &__content {
+      &__list {
+        &__content {
+          &__box {
+            &__item {
+              width: 140px;
+              height: 187px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

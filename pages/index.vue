@@ -298,10 +298,7 @@ export default {
     }
   }
 }
-@media (min-width: 1100px) {
-
-}
-@media (max-width: 1099px) and (min-width: 300px) {
+@media (max-width: 1099px) and (min-width: 100px) {
   .home {
     &__banner {
       & .wrap {
@@ -331,6 +328,28 @@ export default {
           flex-wrap: wrap;
           justify-content: space-evenly;
           flex-direction: row;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 399px) and (min-width: 100px) {
+  .home {
+    &__banner {
+      & .wrap {
+        display: flex;
+        justify-content: center;
+      }
+      &__block {
+        width: 370px;
+        &__label {
+          &__logo {
+            height: 110px;
+            background: 0 0/100% 110px url('static/logo/BoldLogo.svg') no-repeat;
+          }
+          & p {
+            font-size: 16px;
+          }
         }
       }
     }
