@@ -106,7 +106,7 @@ export default {
           title: 'Avito',
           description: 'Сергей',
           link: 'https://www.avito.ru/user/cbd51e5f936d89ba6363cf2de974c006/profile?id=2494107392',
-          iconSvg: '/icons/avito.svg'
+          iconSvg: `${this.$router.options.base}icons/avito.svg`
         }
       ],
       today: this.GET_DAY(),

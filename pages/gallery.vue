@@ -140,6 +140,15 @@ export default {
         height: 187px;
       }
     }
+    &__review {
+      .gallery {
+        &__cards {
+          &__card {
+            height: 250px;
+          }
+        }
+      }
+    }
   }
 }
 </style>
