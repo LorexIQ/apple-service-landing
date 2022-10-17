@@ -24,57 +24,57 @@
       <div class="wrap">
         <div class="home__mini-store__info">
           <nuxt-link to="/assortment">
-            <div class="home__mini-store__info__card">
-              <div class="home__mini-store__info__card__block">
+            <div class="super-btn">
+              <div class="super-btn__block">
               <span>
               <img src="~/assets/imgs/iphonex.svg" alt="iphone">
             </span>
                 <span>Продать iPhone</span>
                 <span>Самая выгодная цена в регионе!</span>
               </div>
-              <div class="home__mini-store__info__card__btn">
+              <div class="super-btn__btn">
                 <span>Перейти</span>
               </div>
             </div>
           </nuxt-link>
           <nuxt-link to="/assortment">
-            <div class="home__mini-store__info__card">
-              <div class="home__mini-store__info__card__block">
+            <div class="super-btn">
+              <div class="super-btn__block">
               <span>
               <img src="~/assets/imgs/iphonex.svg" alt="iphone">
             </span>
                 <span>Купить iPhone</span>
                 <span>Самая низкая цена в регионе!</span>
               </div>
-              <div class="home__mini-store__info__card__btn">
+              <div class="super-btn__btn">
                 <span>Перейти</span>
               </div>
             </div>
           </nuxt-link>
           <nuxt-link to="/services">
-            <div class="home__mini-store__info__card">
-              <div class="home__mini-store__info__card__block">
+            <div class="super-btn">
+              <div class="super-btn__block">
               <span>
               <img src="~/assets/imgs/iphonex_repair.svg" alt="iphone">
             </span>
                 <span>Починить iPhone</span>
                 <span>Высокое качестно за низкую цену!</span>
               </div>
-              <div class="home__mini-store__info__card__btn">
+              <div class="super-btn__btn">
                 <span>Перейти</span>
               </div>
             </div>
           </nuxt-link>
           <nuxt-link to="/services">
-            <div class="home__mini-store__info__card">
-              <div class="home__mini-store__info__card__block">
+            <div class="super-btn">
+              <div class="super-btn__block">
               <span>
               <img src="~/assets/imgs/android.svg" alt="iphone">
             </span>
                 <span>Починить Android</span>
                 <span>Высокое качестно деталей!</span>
               </div>
-              <div class="home__mini-store__info__card__btn">
+              <div class="super-btn__btn">
                 <span>Перейти</span>
               </div>
             </div>
@@ -228,77 +228,6 @@ export default {
       flex-wrap: wrap;
       gap: 30px 0;
       justify-content: space-around;
-      &__card {
-        position: relative;
-        width: 440px;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid #e2e2e2;
-        user-select: none;
-        cursor: pointer;
-        white-space: nowrap;
-        &__block {
-          display: grid;
-          grid-template-areas: "A B"
-                             "A C";
-          row-gap: 5px;
-          column-gap: 20px;
-          padding: 15px 20px 15px 20px;
-          & span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            &:first-child {
-              grid-area: A;
-              display: flex;
-              align-items: center;
-              width: 30px;
-            }
-            &:nth-child(2) {
-              grid-area: B;
-              color: #e2e2e2;
-              font-size: 36px;
-              align-self: flex-end;
-            }
-            &:last-child {
-              grid-area: C;
-              align-self: flex-start;
-            }
-          }
-        }
-        &__btn {
-          position: absolute;
-          height: 100%;
-          width: 0;
-          top: 0;
-          right: 0;
-          overflow: hidden;
-          border-radius: 0 10px 10px 0;
-          background-color: #e2e2e2;
-          box-shadow: 3px 0 10px 0 #0b0b0b inset;
-          transition: .3s;
-          & span {
-            display: flex;
-            align-items: center;
-            padding: 0 10px;
-            height: 100%;
-            color: #0f0f0f;
-          }
-        }
-        &:hover {
-          .home {
-            &__mini-store {
-              &__info {
-                &__card {
-                  &__btn {
-                    width: 100px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
   &__map {
@@ -366,6 +295,44 @@ export default {
       width: 100%;
       border-radius: 10px;
       overflow: hidden;
+    }
+  }
+}
+@media (min-width: 1100px) {
+
+}
+@media (max-width: 1099px) and (min-width: 300px) {
+  .home {
+    &__banner {
+      & .wrap {
+        display: flex;
+        justify-content: center;
+      }
+      &__block {
+        width: 370px;
+        &__label {
+          &__logo {
+            height: 120px;
+            background: 0 0/100% 120px url('static/logo/BoldLogo.svg') no-repeat;
+          }
+          & p {
+            font-size: 18px;
+          }
+        }
+        &__btn {
+          align-self: center;
+        }
+      }
+    }
+    &__map {
+      &__info {
+        flex-direction: column-reverse;
+        &__label {
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          flex-direction: row;
+        }
+      }
     }
   }
 }
