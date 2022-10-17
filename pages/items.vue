@@ -67,23 +67,7 @@
       </div>
     </div>
     <l-footer/>
-    <!--      Модалка просмотра картинки во весь экран-->
-    <div
-      class="items__full-watch"
-      v-show="selectedImg.length"
-      @click="selectedImg = ''"
-    >
-      <div class="items__full-watch__box">
-        <div class="items__full-watch__box__img">
-          <img
-            draggable="false"
-            :style="`background-color: ${selectedImg.split('|')[1]};`"
-            :src="selectedImg.split('|')[0]"
-            alt=""
-          >
-        </div>
-      </div>
-    </div>
+    <l-full-screen-image v-model="selectedImg" />
   </div>
 </template>
 
@@ -121,7 +105,7 @@ export default {
     &__warming {
       background-color: #090909;
       & > div {
-        padding: 20px 0;
+        padding: 20px;
       }
       &__content {
         border: 2px solid #a80000;
@@ -137,6 +121,7 @@ export default {
       &__box {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 30px;
       }
     }
@@ -170,46 +155,25 @@ export default {
       }
     }
   }
-  &__full-watch {
-    $borderFullWatch: 10px;
-    position: fixed;
-    top: 80px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    cursor: zoom-out;
-    z-index: 2;
-    &__box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 90%;
-      max-width: 1100px;
-      width: 100%;
-      background-color: #000;
-      border-radius: 10px;
-      overflow: hidden;
-      &__img {
-        width: calc(100% - $borderFullWatch - $borderFullWatch);
-        height: calc(100% - $borderFullWatch - $borderFullWatch);
-        border-radius: 5px;
-        overflow: hidden;
-        user-select: none;
-        & img {
-          width: 100%;
-          object-fit: contain;
-          height: 100%;
-        }
-      }
-    }
-  }
   & .footer {
     position: absolute;
     bottom: 0;
+  }
+}
+@media (max-width: 1099px) and (min-width: 300px) {
+  .items {
+    &__content {
+      &__list {
+        &__content {
+          &__box {
+            &__item {
+              width: 180px;
+              height: 240px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 </style>
