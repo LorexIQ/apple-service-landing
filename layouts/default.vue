@@ -114,6 +114,7 @@ export default {
 .default {
   margin: 0 auto;
   height: inherit;
+  overflow-x: hidden;
   &__navbar {
     position: fixed;
     z-index: 2;
