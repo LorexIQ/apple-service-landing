@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "dotenv -e .env.deploy -- nuxt generate",
+    "deploy": "dotenv -e .env.deploy -- npm run generate && npm run push",
+    "push": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -15,8 +16,10 @@
     "@fortawesome/vue-fontawesome": "^2.0.8",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.19.3",
+    "dotenv-cli": "^6.0.0",
     "fast-average-color": "^9.1.1",
     "nuxt": "^2.15.8",
+    "push-dir": "^0.4.1",
     "sass": "^1.55.0",
     "sass-loader": "^10.1.1",
     "vue": "^2.6.14",
