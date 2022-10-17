@@ -26,12 +26,12 @@
             class="gallery__cards__card"
             v-for="card in countReview"
             :key="card"
-            @click="selectedImg = `/gallery/review/${card}.jpg|${$event.target.style.backgroundColor}`"
+            @click="selectedImg = `${$router.options.base}gallery/review/${card}.jpg|${$event.target.style.backgroundColor}`"
           >
             <img
               draggable="false"
               :class="`review-card-${card}`"
-              :src="`/gallery/review/${card}.jpg`"
+              :src="`${$router.options.base}gallery/review/${card}.jpg`"
               alt=""
             >
           </div>
