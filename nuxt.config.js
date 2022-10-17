@@ -1,5 +1,4 @@
 const router = process.env.MODE !== 'dev' ? '/apple-service-landing/' : '/'
-console.log(`${router}icons/Apple.svg`)
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
