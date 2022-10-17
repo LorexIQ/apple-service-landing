@@ -23,7 +23,7 @@
     <div class="home__mini-store">
       <div class="wrap">
         <div class="home__mini-store__info">
-          <nuxt-link to="/assortment">
+          <nuxt-link to="/items">
             <div class="super-btn">
               <div class="super-btn__block">
               <span>
@@ -37,7 +37,7 @@
               </div>
             </div>
           </nuxt-link>
-          <nuxt-link to="/assortment">
+          <nuxt-link to="/items">
             <div class="super-btn">
               <div class="super-btn__block">
               <span>
