@@ -52,12 +52,12 @@
                 class="items__content__list__content__box__item"
                 v-for="card in countItems"
                 :key="card"
-                @click="selectedImg = `/items/data/${card}.jpg|${$event.target.style.backgroundColor}`"
+                @click="selectedImg = `${$router.options.base}items/data/${card}.jpg|${$event.target.style.backgroundColor}`"
               >
                 <img
                   draggable="false"
                   :class="`item-card-${card}`"
-                  :src="`/items/data/${card}.jpg`"
+                  :src="`${$router.options.base}items/data/${card}.jpg`"
                   alt=""
                 >
               </div>

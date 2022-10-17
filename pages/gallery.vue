@@ -8,12 +8,12 @@
             class="gallery__cards__card"
             v-for="card in countAbout"
             :key="card"
-            @click="selectedImg = `/gallery/about/${card}.jpg|${$event.target.style.backgroundColor}`"
+            @click="selectedImg = `${$router.options.base}gallery/about/${card}.jpg|${$event.target.style.backgroundColor}`"
           >
             <img
               draggable="false"
               :class="`about-card-${card}`"
-              :src="`/gallery/about/${card}.jpg`"
+              :src="`${$router.options.base}gallery/about/${card}.jpg`"
               alt=""
             >
           </div>
@@ -57,6 +57,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$router)
     for (let card = 0; card < this.countAbout; ++card) {
       let cardObject = document.querySelector(`.about-card-${card + 1}`)
       this.fac.getColorAsync(cardObject)
