@@ -92,18 +92,20 @@
               <span>Часы работы</span>
               <span>пн. — сб. c 10 до 19</span>
             </div>
-            <div class="home__map__info__label__info-block home__map__info__label__info-block--medium">
-              <span><lfa icon="location-dot"/></span>
-              <span>Адрес сервиса</span>
-              <span>Брянск, Авиационная улица, 11, <p>ТЦ Эдельвейс</p></span>
-            </div>
+            <a href="https://yandex.ru/maps/-/CCUZBKte~B" target="_blank">
+              <div class="home__map__info__label__info-block home__map__info__label__info-block--medium" >
+                <span><lfa icon="location-dot"/></span>
+                <span>Адрес сервиса</span>
+                <span>Брянск, Авиационная улица, 11, <p>ТЦ Эдельвейс</p></span>
+              </div>
+            </a>
             <div class="home__map__info__label__info-block">
               <span><lfa icon="location-arrow"/></span>
               <span>Как добраться?</span>
               <span>Главный вход → направо → дверь под лестницей</span>
             </div>
             <nuxt-link to="/contacts">
-              <div class="home__map__info__label__info-block home__map__info__label__info-block--high">
+              <div class="home__map__info__label__info-block home__map__info__label__info-block--medium home__map__info__label__info-block--high">
                 <span><lfa icon="phone"/></span>
                 <span>Телефон</span>
                 <span><p>+7-900-(000)-00-00</p> Все доступые варианты связи, доступны на странице <p>Контакты</p></span>
@@ -256,6 +258,7 @@ export default {
           max-width: 250px;
           border: 1px solid #adacab;
           border-radius: 10px;
+          transition: .3s;
           & span {
             &:first-child {
               grid-area: A;
@@ -282,13 +285,6 @@ export default {
                 font-size: 12px;
               }
             }
-            & a, & p {
-              display: inline;
-              font-size: 16px;
-              color: #e2e2e2;
-              margin: 0;
-              padding: 0;
-            }
           }
           &--medium {
             & a, & p {
@@ -297,6 +293,9 @@ export default {
               color: #e2e2e2;
               margin: 0;
               padding: 0;
+            }
+            &:hover {
+              background-color: #2f2f2f;
             }
           }
         }
