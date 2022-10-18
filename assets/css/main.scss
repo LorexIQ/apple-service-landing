@@ -79,6 +79,7 @@ a {
   position: relative;
   max-width: 440px;
   width: 90vw;
+  max-height: 105px;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #e2e2e2;
@@ -103,6 +104,9 @@ a {
         width: 30px;
         font-size: 35px;
         color: #e2e2e2;
+        & img {
+          width: 30px;
+        }
       }
       &:nth-child(2) {
         grid-area: B;

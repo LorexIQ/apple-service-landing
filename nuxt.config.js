@@ -8,6 +8,10 @@ export default {
   router: {
     base: router
   },
+  server: {
+    host: process.env.NUXT_ENV_APP_IP || '0.0.0.0',
+    port: process.env.NUXT_ENV_APP_PORT || 3000
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
