@@ -92,21 +92,23 @@
               <span>Часы работы</span>
               <span>пн. — сб. c 10 до 19</span>
             </div>
-            <div class="home__map__info__label__info-block">
+            <div class="home__map__info__label__info-block home__map__info__label__info-block--medium">
               <span><lfa icon="location-dot"/></span>
               <span>Адрес сервиса</span>
-              <span>Брянск, Авиационная улица, 11</span>
+              <span>Брянск, Авиационная улица, 11, <p>ТЦ Эдельвейс</p></span>
             </div>
             <div class="home__map__info__label__info-block">
               <span><lfa icon="location-arrow"/></span>
               <span>Как добраться?</span>
               <span>Главный вход → направо → дверь под лестницей</span>
             </div>
-            <div class="home__map__info__label__info-block home__map__info__label__info-block--high">
-              <span><lfa icon="phone"/></span>
-              <span>Телефон</span>
-              <span><p>+7-900-(000)-00-00</p> Все доступые варианты связи, доступны на странице <nuxt-link to="/contacts">Контакты</nuxt-link></span>
-            </div>
+            <nuxt-link to="/contacts">
+              <div class="home__map__info__label__info-block home__map__info__label__info-block--high">
+                <span><lfa icon="phone"/></span>
+                <span>Телефон</span>
+                <span><p>+7-900-(000)-00-00</p> Все доступые варианты связи, доступны на странице <p>Контакты</p></span>
+              </div>
+            </nuxt-link>
           </div>
           <yandex-map :settings="settings" :coords="coords" :controls="control">
             <ymap-marker
@@ -274,17 +276,27 @@ export default {
             }
           }
           &--high {
+            cursor: pointer;
             & span {
               &:last-child {
                 font-size: 12px;
               }
             }
             & a, & p {
+              display: inline;
               font-size: 16px;
               color: #e2e2e2;
               margin: 0;
               padding: 0;
-              cursor: pointer;
+            }
+          }
+          &--medium {
+            & a, & p {
+              display: inline;
+              font-size: 16px;
+              color: #e2e2e2;
+              margin: 0;
+              padding: 0;
             }
           }
         }
