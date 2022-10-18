@@ -1,17 +1,17 @@
-const router = process.env.MODE !== 'dev' ? '/apple-service-landing/' : '/'
+const router = '/'//process.env.MODE !== 'dev' ? '/apple-service-landing/' : '/'
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  router: {
-    base: router
-  },
-  server: {
-    host: process.env.NUXT_ENV_APP_IP || '0.0.0.0',
-    port: process.env.NUXT_ENV_APP_PORT || 3000
-  },
+  // router: {
+  //   base: router
+  // },
+  // server: {
+  //   host: process.env.NUXT_ENV_APP_IP || '0.0.0.0',
+  //   port: process.env.NUXT_ENV_APP_PORT || 3000
+  // },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
