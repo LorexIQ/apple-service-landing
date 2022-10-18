@@ -108,7 +108,7 @@
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium home__map__info__label__info-block--high">
                 <span><lfa icon="phone"/></span>
                 <span>Телефон</span>
-                <span><p>+7-900-(000)-00-00</p> Все доступые варианты связи, доступны на странице <p>Контакты</p></span>
+                <span><p>+7 (980) 307-38-82</p> Все доступые варианты связи, доступны на странице <p>Контакты</p></span>
               </div>
             </nuxt-link>
           </div>
