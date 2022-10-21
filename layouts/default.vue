@@ -11,7 +11,13 @@
             <img src="@/static/icons/menu.svg" alt="">
             <img src="@/static/icons/menu.svg" alt="">
           </div>
-          <div class="default__navbar__content__logo__img"/>
+          <nuxt-link
+            class="default__navbar__content__navigation__btn"
+            exact
+            to="/"
+          >
+            <div class="default__navbar__content__logo__img"/>
+          </nuxt-link>
           <div
             class="default__navbar__content__logo__status"
             :class="status ? 'default__navbar__content__logo__status--green' : 'default__navbar__content__logo__status--red'"
@@ -37,7 +43,7 @@
             active-class="default__navbar__content__navigation__btn--active"
             to="/usedItems"
           >
-            <span>Б/у Iphone</span>
+            <span>Б/у iPhone</span>
           </nuxt-link>
           <nuxt-link
             class="default__navbar__content__navigation__btn"
