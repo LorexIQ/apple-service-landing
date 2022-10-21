@@ -56,15 +56,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'
+    [
+      '@nuxtjs/yandex-metrika',
+      {
+        id: process.env.METRIKA,
+        webvisor: true,
+        clickmap: true,
+        useCDN: false,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  },
-
-  axios: {
-    credentials: false,
-    proxyHeaders: false
   }
 }

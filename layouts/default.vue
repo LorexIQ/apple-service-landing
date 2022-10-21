@@ -35,6 +35,13 @@
           <nuxt-link
             class="default__navbar__content__navigation__btn"
             active-class="default__navbar__content__navigation__btn--active"
+            to="/usedItems"
+          >
+            <span>Б/у Iphone</span>
+          </nuxt-link>
+          <nuxt-link
+            class="default__navbar__content__navigation__btn"
+            active-class="default__navbar__content__navigation__btn--active"
             to="/items"
           >
             <span>Товары</span>
