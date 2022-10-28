@@ -75,6 +75,26 @@ a {
   &-leave, &-enter-to {}
 }
 
+.ymaps-2-1-79-balloon {
+  border-radius: 10px;
+  overflow: hidden;
+  &__content {
+    background-color: #000 !important;
+  }
+  &__layout {
+    background-color: #000 !important;
+  }
+  &__close {
+    &-button {
+      width: 17px !important;
+      height: 53px !important;
+      margin-right: 7px !important;
+      background: url(static/icons/times.svg) no-repeat 100% !important;
+      transition: .3s;
+    }
+  }
+}
+
 .super-btn {
   position: relative;
   max-width: 440px;

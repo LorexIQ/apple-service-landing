@@ -8,10 +8,11 @@
             <p>Дёшево, качественно, в срок!</p>
           </div>
           <ul class="home__banner__block__list">
-            <li>Высокое качество ремонта</li>
+            <li>Большой ассортимент смартфонов</li>
+            <li>Скидки постоянным клиентам</li>
             <li>Тысячи довольных клиентов</li>
-            <li>Большой выбор товара</li>
-            <li>Широкий график работы</li>
+            <li>Высокое качество ремонта</li>
+            <li>Лучшие цены в городе</li>
           </ul>
           <nuxt-link class="home__banner__block__btn" to="/contacts">
             <span>Позвонить</span>
@@ -23,7 +24,7 @@
     <div class="home__mini-store">
       <div class="wrap">
         <div class="home__mini-store__info">
-          <nuxt-link to="/items">
+          <nuxt-link to="/contacts">
             <div class="super-btn">
               <div class="super-btn__block">
               <span>
@@ -90,7 +91,7 @@
             <div class="home__map__info__label__info-block">
               <span><lfa icon="clock"/></span>
               <span>Часы работы</span>
-              <span>пн. — сб. c 10 до 19</span>
+              <span>пн. — пт. c 10 до 19 <p>сб. с 11 до 17</p></span>
             </div>
             <a href="https://yandex.ru/maps/-/CCUZBKte~B" target="_blank">
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium" >
@@ -102,7 +103,7 @@
             <div class="home__map__info__label__info-block">
               <span><lfa icon="location-arrow"/></span>
               <span>Как добраться?</span>
-              <span>Главный вход → направо → дверь под лестницей</span>
+              <span>Главный вход → направо → дверь возле лестницы</span>
             </div>
             <nuxt-link to="/contacts">
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium home__map__info__label__info-block--high">
@@ -117,6 +118,13 @@
               :coords="coords"
               marker-id="id"
               hint-content="Главный офис"
+              :icon="{
+                  layout: 'default#image',
+                  imageHref: 'icons/blackApple.png',
+                  imageSize: [30, 30],
+                  imageOffset: [-15, -35]
+              }"
+              :balloon="balloon"
             />
           </yandex-map>
         </div>
@@ -140,6 +148,19 @@ export default {
         coordorder: 'latlong',
         enterprise: false,
         version: '2.1'
+      },
+      balloon: {
+        header: `
+          <img src="logo/LongLogo.svg"></img>
+        `,
+        body: `
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <p style="margin: 0;padding: 10px 0 0;font-weight: 600;text-align: center; color: #898887;">Главный вход</p>
+            <img width="160" alt="" src="icons/in.jpg" style="border-radius: 5px;"></img>
+            <a href="tel:79803073882" style="color: #548ce6; text-align: center">+7 (980) 307-38-82</a>
+          </div>
+        `,
+        footer: 'ООО "Apple Service 32"'
       },
       coords: [53.263099, 34.323138],
       control: ["zoomControl", "geolocationControl", "rulerControl", "trafficControl", "routeButtonControl"]
@@ -276,6 +297,9 @@ export default {
               grid-area: C;
               font-size: 16px;
               font-weight: 500;
+              & p {
+                margin: 0;
+              }
             }
           }
           &--high {
