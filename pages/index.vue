@@ -38,7 +38,7 @@
               </div>
             </div>
           </nuxt-link>
-          <nuxt-link to="/items">
+          <a href="https://www.avito.ru/user/cbd51e5f936d89ba6363cf2de974c006/profile?id=2494107392" target="_blank">
             <div class="super-btn">
               <div class="super-btn__block">
               <span>
@@ -51,7 +51,7 @@
                 <span>Перейти</span>
               </div>
             </div>
-          </nuxt-link>
+          </a>
           <nuxt-link to="/services">
             <div class="super-btn">
               <div class="super-btn__block">
