@@ -85,7 +85,13 @@
           draggable="false"
         >
           <lfa icon="phone"/>
-          <span>Позвонить</span>
+        </a>
+        <a
+          href="https://api.whatsapp.com/send/?phone=79803073882&text&type=phone_number&app_absent=0"
+          target="_blank"
+          draggable="false"
+        >
+          <lfa :icon="['fab', 'whatsapp']"/>
         </a>
       </div>
       <l-footer />
@@ -287,22 +293,34 @@ export default {
       align-items: center;
       width: 80%;
       height: 40px;
-      padding: 5px 10px;
       margin-bottom: 10px;
-      border-radius: 15px;
-      background: linear-gradient(45deg, rgb(66, 200, 105) 0%, rgb(33, 147, 67) 100%);
       box-sizing: border-box;
       cursor: pointer;
       z-index: 2;
       transition: .3s;
+      & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(45deg, rgb(66, 200, 105) 0%, rgb(33, 147, 67) 100%);
+        &:first-child {
+          border-radius: 15px 0 0 15px;
+        }
+        &:last-child {
+          border-radius: 0 15px 15px 0;
+        }
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
       & svg {
         color: #fff !important;
       }
       & span {
         color: #fff !important;
-      }
-      &:hover {
-        transform: scale(1.02);
       }
     }
   }
