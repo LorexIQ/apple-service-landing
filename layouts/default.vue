@@ -80,7 +80,7 @@
       <nuxt/>
       <div class="default__app__call-btn" ref="call">
         <a
-          href="tel:79803073882"
+          href="tel:+79803073882"
           target="_blank"
           draggable="false"
         >

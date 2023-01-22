@@ -72,7 +72,7 @@ export default {
         },
         {
           title: '+7 (980) 307-38-82',
-          link: 'tel:79803073882',
+          link: 'tel:+79803073882',
           icon: 'mobile'
         },
         {
