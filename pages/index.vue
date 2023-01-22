@@ -130,7 +130,6 @@
         </div>
       </div>
     </div>
-    <l-footer />
   </div>
 </template>
 

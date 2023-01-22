@@ -38,7 +38,6 @@
         </div>
       </div>
     </div>
-    <l-footer />
     <l-full-screen-image v-model="selectedImg"/>
   </div>
 </template>
@@ -57,7 +56,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$router)
     for (let card = 0; card < this.countAbout; ++card) {
       let cardObject = document.querySelector(`.about-card-${card + 1}`)
       this.fac.getColorAsync(cardObject)

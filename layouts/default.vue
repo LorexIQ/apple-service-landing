@@ -78,6 +78,17 @@
     </div>
     <div class="default__app">
       <nuxt/>
+      <div class="default__app__call-btn" ref="call">
+        <a
+          href="tel:79803073882"
+          target="_blank"
+          draggable="false"
+        >
+          <lfa icon="phone"/>
+          <span>Позвонить</span>
+        </a>
+      </div>
+      <l-footer />
     </div>
   </div>
 </template>
@@ -267,6 +278,43 @@ export default {
   &__app {
     padding-top: 80px;
     height: calc(100% - 80px);
+    &__call-btn {
+      position: sticky;
+      bottom: 10px;
+      left: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 40px;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      background: linear-gradient(45deg, rgb(66, 200, 105) 0%, rgb(33, 147, 67) 100%);
+      box-sizing: border-box;
+      cursor: pointer;
+      z-index: 2;
+      transition: .3s;
+      & svg {
+        color: #fff !important;
+      }
+      & span {
+        color: #fff !important;
+      }
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
   }
 }
+@media (min-width: 1099px) {
+  .default {
+    &__app {
+      &__call-btn {
+        display: none;
+      }
+    }
+  }
+}
+
 </style>

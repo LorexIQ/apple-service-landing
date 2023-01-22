@@ -3,6 +3,11 @@ export default {
     return {
       data: [
         {
+          day: 'Воскресенье',
+          abbr: 'Вс',
+          closed: true
+        },
+        {
           day: 'Понедельник',
           abbr: 'Пн',
           hourStart: 10,
@@ -37,12 +42,7 @@ export default {
           abbr: 'Сб',
           hourStart: 11,
           hourEnd: 17
-        },
-        {
-          day: 'Воскресенье',
-          abbr: 'Вс',
-          closed: true
-        },
+        }
       ]
     }
   },
@@ -51,12 +51,12 @@ export default {
       return state.data;
     },
     GET_DAY: (state) => {
-      return state.data[new Date().getDay() - 1]
+      return state.data[new Date().getDay()]
     },
     GET_OPEN_STATE: (state) => {
       const time = new Date()
-      const dayObj = state.data[time.getDay() - 1]
-      return dayObj.closed || time.getHours() >= dayObj.hourStart && time.getHours() < dayObj.hourEnd
+      const dayObj = state.data[time.getDay()]
+      return !dayObj.closed || time.getHours() >= dayObj.hourStart && time.getHours() < dayObj.hourEnd
     }
   }
 }

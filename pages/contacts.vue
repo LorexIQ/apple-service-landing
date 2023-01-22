@@ -50,7 +50,6 @@
         </div>
       </div>
     </div>
-    <l-footer />
   </div>
 </template>
 
@@ -142,8 +141,12 @@ export default {
       return time.getHours() + time.getMinutes() / 60
     },
     getLastTime() {
-      return `${`${Math.floor(this.today.hourEnd - this.timeNow)}`.padStart(2, '0')}:
-      ${`${60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60) === 60 ? 59 : 60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60)}`.padStart(2, '0')}`
+      if (!this.today.closed) {
+        return `${`${Math.floor(this.today.hourEnd - this.timeNow)}`.padStart(2, '0')}:
+        ${`${60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60) === 60 ? 59 : 60 - Math.round((this.timeNow - Math.floor(this.timeNow)) * 60)}`.padStart(2, '0')}`
+      } else {
+        return `00:00`
+      }
     }
   }
 }

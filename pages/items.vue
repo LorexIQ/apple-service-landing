@@ -66,7 +66,6 @@
         </div>
       </div>
     </div>
-    <l-footer/>
     <l-full-screen-image v-model="selectedImg" />
   </div>
 </template>
