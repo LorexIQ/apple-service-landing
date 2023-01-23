@@ -56,7 +56,7 @@ export default {
     GET_OPEN_STATE: (state) => {
       const time = new Date()
       const dayObj = state.data[time.getDay()]
-      return !dayObj.closed || time.getHours() >= dayObj.hourStart && time.getHours() < dayObj.hourEnd
+      return !dayObj.closed && time.getHours() >= dayObj.hourStart && time.getHours() < dayObj.hourEnd
     }
   }
 }

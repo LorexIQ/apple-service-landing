@@ -16,7 +16,7 @@
             </div>
             <div class="contacts__info__graphic__under-way__table">
               <span
-                :style="index + 1 === new Date().getDay() ? 'color: #e2e2e2;' : ''"
+                :style="index === new Date().getDay() ? 'color: #e2e2e2;' : ''"
                 v-for="(day, index) in days"
                 :key="index"
               >
