@@ -93,18 +93,34 @@
               <span>Часы работы</span>
               <span>пн. — пт. c 10 до 19 <p>сб. с 11 до 17</p></span>
             </div>
-            <a href="https://yandex.ru/maps/-/CCUZBKte~B" target="_blank">
+            <a
+              href="https://yandex.ru/maps/-/CCUZBKte~B"
+              target="_blank"
+              @mouseenter="moveToPoint(1)"
+            >
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium" >
                 <span><lfa icon="location-dot"/></span>
-                <span>Адрес сервиса</span>
-                <span>Брянск, Авиационная улица, 11, <p>ТЦ Эдельвейс</p></span>
+                <span>Адрес сервиса 1</span>
+                <span>
+                  Брянск, Авиационная улица, 11, <p>ТЦ Эдельвейс</p>
+                  Главный вход → направо → дверь возле лестницы
+                </span>
               </div>
             </a>
-            <div class="home__map__info__label__info-block">
-              <span><lfa icon="location-arrow"/></span>
-              <span>Как добраться?</span>
-              <span>Главный вход → направо → дверь возле лестницы</span>
-            </div>
+            <a
+              href="https://yandex.ru/maps/-/CDFoI0y4"
+              target="_blank"
+              @mouseenter="moveToPoint(2);"
+            >
+              <div class="home__map__info__label__info-block home__map__info__label__info-block--medium" >
+                <span><lfa icon="location-dot"/></span>
+                <span>Адрес сервиса 2</span>
+                <span>
+                  Брянск, 2-я улица Мичурина, 42, <p>Европа</p>
+                  Павильон напротив 4-й кассы
+                </span>
+              </div>
+            </a>
             <nuxt-link to="/contacts">
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium home__map__info__label__info-block--high">
                 <span><lfa icon="phone"/></span>
@@ -113,10 +129,15 @@
               </div>
             </nuxt-link>
           </div>
-          <yandex-map :settings="settings" :coords="coords" :controls="control">
+          <yandex-map
+            :settings="settings"
+            :coords="coords"
+            :controls="control"
+            :zoom="zoom"
+          >
             <ymap-marker
-              :coords="coords"
-              marker-id="id"
+              :coords="balloon1.coords"
+              marker-id="balloon1"
               hint-content="Главный офис"
               :icon="{
                   layout: 'default#image',
@@ -124,7 +145,19 @@
                   imageSize: [30, 30],
                   imageOffset: [-15, -35]
               }"
-              :balloon="balloon"
+              :balloon="balloon1.html"
+            />
+            <ymap-marker
+              :coords="balloon2.coords"
+              marker-id="balloon2"
+              hint-content="Второй офис"
+              :icon="{
+                  layout: 'default#image',
+                  imageHref: 'icons/blackApple.png',
+                  imageSize: [30, 30],
+                  imageOffset: [-15, -35]
+              }"
+              :balloon="balloon2.html"
             />
           </yandex-map>
         </div>
@@ -148,25 +181,60 @@ export default {
         enterprise: false,
         version: '2.1'
       },
-      balloon: {
-        header: `
+      control: ["zoomControl", "geolocationControl", "rulerControl", "trafficControl", "routeButtonControl"],
+      coords: [53.261160, 34.385890],
+      zoom: 11,
+      moveTimeoutId: null,
+      balloon1: {
+        html: {
+          header: `
           <img src="logo/LongLogo.svg"></img>
         `,
-        body: `
+          body: `
           <div style="display: flex; flex-direction: column; justify-content: center;">
             <p style="margin: 0;padding: 10px 0 0;font-weight: 600;text-align: center; color: #898887;">Главный вход</p>
             <img width="160" alt="" src="icons/in.jpg" style="border-radius: 5px;"></img>
             <a href="tel:79803073882" style="color: #548ce6; text-align: center">+7 (980) 307-38-82</a>
           </div>
         `,
-        footer: 'ООО "Apple Service 32"'
+          footer: 'ООО "Apple Service 32"'
+        },
+        coords: [53.263099, 34.323138]
       },
-      coords: [53.263099, 34.323138],
-      control: ["zoomControl", "geolocationControl", "rulerControl", "trafficControl", "routeButtonControl"]
+      balloon2: {
+        html: {
+          header: `
+          <img src="logo/LongLogo.svg"></img>
+        `,
+          body: `
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <p style="margin: 0;padding: 10px 0 0;font-weight: 600;text-align: center; color: #898887;">Главный вход</p>
+            <img width="160" alt="" src="icons/in2.jpg" style="border-radius: 5px;"></img>
+            <a href="tel:79803073882" style="color: #548ce6; text-align: center">+7 (980) 307-38-82</a>
+          </div>
+        `,
+          footer: 'ООО "Apple Service 32"'
+        },
+        coords: [53.256701, 34.440666]
+      },
     }
   },
   mounted() {
 
+  },
+  methods: {
+    moveToPoint(point) {
+      clearTimeout(this.moveTimeoutId);
+      this.zoom = 17;
+
+      this.moveTimeoutId = setTimeout(() => {
+        if (point === 1) {
+          this.coords = this.balloon1.coords;
+        } else if (point === 2) {
+          this.coords = this.balloon2.coords;
+        }
+      });
+    }
   }
 }
 </script>
@@ -274,10 +342,12 @@ export default {
           column-gap: 15px;
           row-gap: 3px;
           padding: 5px 10px;
+          width: 100%;
           min-width: 200px;
           max-width: 250px;
           border: 1px solid #adacab;
           border-radius: 10px;
+          box-sizing: border-box;
           transition: .3s;
           & span {
             &:first-child {
@@ -325,7 +395,7 @@ export default {
       }
     }
     & section {
-      height: 500px;
+      height: 538px;
       width: 100%;
       border-radius: 10px;
       overflow: hidden;
