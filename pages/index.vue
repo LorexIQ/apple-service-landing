@@ -100,7 +100,7 @@
             >
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium" >
                 <span><lfa icon="location-dot"/></span>
-                <span>Адрес сервиса 1</span>
+                <span>Советский р-н</span>
                 <span>
                   Брянск, Авиационная улица, 11, <p>ТЦ Эдельвейс</p>
                   Главный вход → направо → дверь возле лестницы
@@ -114,9 +114,9 @@
             >
               <div class="home__map__info__label__info-block home__map__info__label__info-block--medium" >
                 <span><lfa icon="location-dot"/></span>
-                <span>Адрес сервиса 2</span>
+                <span>Володарский р-н</span>
                 <span>
-                  Брянск, 2-я улица Мичурина, 42, <p>Европа</p>
+                  Брянск, 2-я улица Мичурина, 42, <p>ТЦ Европа</p>
                   Павильон напротив 4-й кассы
                 </span>
               </div>
