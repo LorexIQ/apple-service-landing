@@ -31,6 +31,9 @@ export default {
     script: [
       {
         src: 'https://unpkg.com/fast-average-color/dist/index.browser.min.js'
+      },
+      {
+        src: '//code.jivo.ru/widget/28PkP64jKS'
       }
     ]
   },
