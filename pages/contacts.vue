@@ -81,11 +81,10 @@ export default {
           icon: 'phone'
         },
         {
-          title: 'Viber',
-          description: '+7 (980) 307-38-82',
-          link: 'viber://chat?number=%2B79803073882',
-          icon: ['fab', 'viber'],
-          color: '#774e97'
+          title: 'MAX',
+          description: 'Сергей Ремонт техники Apple',
+          link: 'https://max.ru/u/f9LHodD0cOJZzMNUFlLZ-4T_DhTzmiPJV6NTHG10GF2C8b5zFd1YZ5U4mf4',
+          iconSvg: `${this.$router.options.base}icons/max.svg`
         },
         {
           title: 'Telegram',
@@ -104,7 +103,7 @@ export default {
         {
           title: 'Avito',
           description: 'Сергей',
-          link: 'https://www.avito.ru/user/cbd51e5f936d89ba6363cf2de974c006/profile?id=2494107392',
+          link: 'https://www.avito.ru/user/c71f05956d67a82ae59e0b7b66445199/profile',
           iconSvg: `${this.$router.options.base}icons/avito.svg`
         }
       ],
@@ -228,7 +227,7 @@ export default {
           }
           &:last-child {
             grid-area: C;
-            font-size: 16px;
+            font-size: 14px;
           }
         }
         &:hover {
